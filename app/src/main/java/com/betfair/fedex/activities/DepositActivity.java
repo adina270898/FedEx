@@ -1,9 +1,11 @@
-package com.betfair.fedex;
+package com.betfair.fedex.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.betfair.fedex.R;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
