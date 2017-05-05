@@ -1,6 +1,7 @@
 package com.betfair.fedex.utils;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,7 +24,7 @@ public class IOUtils {
     public static String readFromInternalStorage(Context context, String fileName) {
         StringBuilder sb = new StringBuilder();
         try {
-            FileInputStream inputStream = context.openFileInput("fileName");
+            FileInputStream inputStream = context.openFileInput(fileName);
             BufferedReader bf = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = bf.readLine()) != null) {

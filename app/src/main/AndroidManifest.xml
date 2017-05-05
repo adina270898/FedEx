@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".activities.DepositActivity"
+            android:name=".activities.SendMoney"
             android:parentActivityName=".activities.MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

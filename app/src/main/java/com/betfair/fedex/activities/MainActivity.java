@@ -25,19 +25,22 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     public void onClickDeposit(View view) {
-        Intent intent = new Intent(this, DepositActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, "You clicked Deposit!");
+//        Intent intent = new Intent(this, SendMoney.class);
+//        intent.putExtra(EXTRA_MESSAGE, "Send Money: ");
+//        startActivity(intent);
+    }
+
+    public void onClickSendMoney(View view) {
+        Intent intent = new Intent(this, SendMoney.class);
+        intent.putExtra(EXTRA_MESSAGE, "Send Money: ");
         startActivity(intent);
     }
 
-    public void onClickScanCard(View view) {
+    public void onClickGrabCardNo(View view) {
         scannerView = new ZXingScannerView(getApplicationContext());
         setContentView(scannerView);
         scannerView.setResultHandler(this);
         scannerView.startCamera();
-    }
-
-    public void onClickWithdraw(View view) {
     }
 
     @Override
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         Toast.makeText(this, result.getText(), Toast.LENGTH_LONG).show();
         scannerView.stopCamera();
         IOUtils.writeToInternalStorage(this.getApplicationContext(), FILE_NAME, result.getText());
+        startActivity(this.getIntent().setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
 }
