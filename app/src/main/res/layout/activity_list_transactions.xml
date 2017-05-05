@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.betfair.fedex.activities.ListTransactions">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TableRow android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/transaction_list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoLink="web"
+                android:text="Transaction list"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+        <TableRow>
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id = "@+id/list_of_transactions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:padding="5dp"
+                android:stretchColumns="*"
+                >
+
+                <TableRow android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/timestamp"
+                        android:text="Timestamp"
+                        android:layout_height="wrap_content"
+
+                        />
+                    <TextView
+                        android:id="@+id/amount"
+                        android:text="Amount"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/type"
+                        android:text="Type"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+
+                <TableRow android:layout_height="1px" android:background="#BDBDBD">
+                    <TextView android:layout_span="2" android:layout_height="1px"
+                        android:layout_width="fill_parent" android:text="">
+                    </TextView>
+                </TableRow>
+
+                <TableRow android:layout_height="wrap_content">
+                    <TextView
+                        android:text="01.05.2016"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:text="100"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:text="D"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+
+                <TableRow android:layout_height="wrap_content">
+                    <TextView
+                        android:text="03.05.2016"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:text="150"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:text="D"
+                        android:layout_height="wrap_content"
+                        />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
