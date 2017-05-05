@@ -6,20 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.betfair.fedex.activities.MainActivity">
 
+    <include layout="@layout/example"
+        android:layout_width="360dp"
+        android:layout_height="220dp"
+        android:id="@+id/include"
+        android:layout_alignParentStart="true"
+        />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="156dp"
         android:layout_height="54dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:background="@android:color/holo_orange_light"
+        android:background="#258136"
         android:elevation="0dp"
         android:onClick="onClickSendMoney"
         android:text="SEND MONEY"
+        android:textColor="@android:color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="241dp" />
 
     <Button
         android:id="@+id/button2"
@@ -42,11 +50,11 @@
         android:layout_height="60dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:layout_marginTop="45dp"
-        android:background="#258136"
+        android:layout_marginTop="38dp"
+        android:background="@color/colorPrimary"
         android:onClick="onClickGrabCardNo"
         android:text="GRAB CARD NUMBER"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
