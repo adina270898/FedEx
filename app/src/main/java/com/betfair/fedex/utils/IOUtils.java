@@ -49,4 +49,14 @@ public class IOUtils {
         }
     }
 
+    public static void appendToInternalStorage(Context context, String fileName, String data) {
+        try {
+            FileOutputStream outputStream = context.openFileOutput(fileName, Context.MODE_APPEND);
+            outputStream.write(data.getBytes());
+            outputStream.flush();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

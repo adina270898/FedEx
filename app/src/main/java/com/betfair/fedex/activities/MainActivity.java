@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     public void onClickDeposit(View view) {
-//        Intent intent = new Intent(this, SendMoney.class);
-//        intent.putExtra(EXTRA_MESSAGE, "Send Money: ");
-//        startActivity(intent);
+        Intent intent = new Intent(this, ListTransactions.class);
+        intent.putExtra(EXTRA_MESSAGE, "List Transactions: ");
+        startActivity(intent);
     }
 
     public void onClickSendMoney(View view) {
