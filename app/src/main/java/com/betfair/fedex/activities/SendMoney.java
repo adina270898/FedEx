@@ -28,6 +28,7 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
         txtAmount = (EditText) findViewById(R.id.txtAmount);
