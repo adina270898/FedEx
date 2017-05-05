@@ -20,7 +20,7 @@ public class ListTransactions extends AppCompatActivity {
         setContentView(R.layout.activity_list_transactions);
 
         String s = IOUtils.readFromInternalStorage(this.getApplicationContext(), DEPOSIT_HISTORY_FILE);
-        String[] lines = s.split("/n");
+        String[] lines = s.split("\n");
         if (lines.length > 0) {
             TableLayout tl = (TableLayout) findViewById(R.id.list_of_transactions);
             for (String line : lines) {

@@ -80,8 +80,7 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
 
     @Override
     public NdefMessage createNdefMessage(NfcEvent event) {
-        String securedCardNumber = IOUtils.readFromInternalStorage(this.getApplicationContext(), FILE_NAME);
-        //String cardNumber = securedCardNumber.substring(0, securedCardNumber.length() - 1);
+        String storedCardNumber = IOUtils.readFromInternalStorage(this.getApplicationContext(), FILE_NAME);
         String amount = txtAmount.getText().toString();
         String stringOut = storedCardNumber + txtAmount.getText().toString();
         //write the amount to be deposited into a file
@@ -104,7 +103,7 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String formattedDate = df.format(c.getTime());
-        return formattedDate + "," + amount + ",D/n";
+        return formattedDate + "," + amount + ",D\n";
     }
 
 }

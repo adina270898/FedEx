@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
-        Toast.makeText(this, result.getText(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Account number saved: " + result.getText(), Toast.LENGTH_LONG).show();
         scannerView.stopCamera();
         IOUtils.writeToInternalStorage(this.getApplicationContext(), FILE_NAME, result.getText());
         startActivity(this.getIntent().setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
