@@ -50,6 +50,7 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
         switch (item.getItemId()){
             case android.R.id.home:
                 // app icon in action bar clicked; goto parent activity.
+                IOUtils.appendToInternalStorage(this.getApplicationContext(), DEPOSIT_HISTORY_FILE, prepareLine(txtAmount.getText().toString()));
                 this.finish();
                 return true;
             default:

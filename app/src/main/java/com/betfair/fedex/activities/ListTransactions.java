@@ -1,5 +1,6 @@
 package com.betfair.fedex.activities;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,9 +17,9 @@ public class ListTransactions extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_transactions);
-
         String s = IOUtils.readFromInternalStorage(this.getApplicationContext(), DEPOSIT_HISTORY_FILE);
         String[] lines = s.split("\n");
         if (lines.length > 0) {
