@@ -39,7 +39,6 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
         if (nfcAdapter == null) {
             Toast.makeText(SendMoney.this, "NFC is not active. Please activate it!", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(SendMoney.this, "Set Callback(s)", Toast.LENGTH_LONG).show();
             nfcAdapter.setNdefPushMessageCallback(this, this);
             nfcAdapter.setOnNdefPushCompleteCallback(this, this);
         }
@@ -82,9 +81,9 @@ public class SendMoney extends AppCompatActivity implements NfcAdapter.CreateNde
     @Override
     public NdefMessage createNdefMessage(NfcEvent event) {
         String securedCardNumber = IOUtils.readFromInternalStorage(this.getApplicationContext(), FILE_NAME);
-        String cardNumber = securedCardNumber.substring(0, securedCardNumber.length() - 1);
+        //String cardNumber = securedCardNumber.substring(0, securedCardNumber.length() - 1);
         String amount = txtAmount.getText().toString();
-        String stringOut = cardNumber + amount;
+        String stringOut = storedCardNumber + txtAmount.getText().toString();
         //write the amount to be deposited into a file
         IOUtils.appendToInternalStorage(this.getApplicationContext(), DEPOSIT_HISTORY_FILE, prepareLine(amount));
 
