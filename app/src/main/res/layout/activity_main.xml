@@ -7,11 +7,12 @@
     tools:context="com.betfair.fedex.activities.MainActivity">
 
     <include layout="@layout/example"
-        android:layout_width="360dp"
-        android:layout_height="220dp"
+        android:layout_width="381dp"
+        android:layout_height="195dp"
         android:id="@+id/include"
         android:layout_alignParentStart="true"
-        />
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button1"
@@ -50,7 +51,7 @@
         android:layout_height="60dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="45dp"
         android:background="@color/colorPrimary"
         android:onClick="onClickGrabCardNo"
         android:text="GRAB CARD NUMBER"
